@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Card, CardActions, CardContent, CardMedia } from "@mui/material";
-interface CardmediaT {
+interface CardMediaT {
   component: string;
   height: string;
   image: string;
@@ -20,7 +20,7 @@ export const StyledCard = styled(Card)`
     height: 600px;
   }
 `;
-export const StyledCardMedia = styled(CardMedia)<CardmediaT>`
+export const StyledCardMedia = styled(CardMedia)<CardMediaT>`
   && {
     max-width: 345px;
     height: 200px;

@@ -1,21 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import {
-  Box,
   ButtonGroup,
   Container,
-  FormControl,
   Grid,
   IconButton,
-  Input,
-  InputAdornment,
-  InputLabel,
   TextField,
 } from "@mui/material";
 import { useRouter } from "next/router";
 import AddIcon from "@mui/icons-material/Add";
 import SearchIcon from "@mui/icons-material/Search";
-import Card from "../Copmonents/Common/Card/Card";
+import Card from "../Components/Common/Card/Card";
 import RemoveIcon from "@mui/icons-material/Remove";
 import * as C from "../styles/common";
 
@@ -54,7 +49,7 @@ const Products: React.FC<ProductsProps> = ({ data = [] }): JSX.Element => {
     <div>
       <Head>
         <title>Products</title>
-        <meta property="og:title" content="Products page " key="title" />
+        <meta property="og:title" content="Products page" key="title" />
       </Head>
       <Container>
         <C.StyledBox mt={5} sx={{ display: "flex" }}>
@@ -64,6 +59,7 @@ const Products: React.FC<ProductsProps> = ({ data = [] }): JSX.Element => {
               value={searchedValue}
               onChange={(e) => setSearchedValue(e.target.value)}
               id="input-with-icon-adornment"
+              placeholder="Search for your product"
             />
           </C.Order2>
           <C.Order1>
@@ -79,7 +75,7 @@ const Products: React.FC<ProductsProps> = ({ data = [] }): JSX.Element => {
         </C.StyledBox>
         <Grid container spacing={2}>
           {data?.map<any>((item: any, key: number) => (
-            <Grid key={item.name + key} item md={3} sm={4} xs={columnNo * 6}>
+            <Grid key={item.name + key} item md={3} sm={6} xs={columnNo * 6}>
               <Card data={item} />
             </Grid>
           ))}
